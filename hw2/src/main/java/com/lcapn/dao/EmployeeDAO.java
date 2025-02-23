@@ -17,7 +17,7 @@ public class EmployeeDAO {
         return ds.getConnection();
     }
 
-    // 插入員工
+    
     public void insertEmployee(EmpBean emp) throws SQLException, NamingException {
         String sql = "INSERT INTO employee (empno, ename, hiredate, salary, deptno, title) VALUES (?, ?, ?, ?, ?, ?)";
         try (Connection conn = getConnection();
@@ -32,7 +32,7 @@ public class EmployeeDAO {
         }
     }
 
-    // 刪除員工
+    
     public void deleteEmployee(String empno) throws SQLException, NamingException {
         String sql = "DELETE FROM employee WHERE empno = ?";
         try (Connection conn = getConnection();
@@ -42,7 +42,7 @@ public class EmployeeDAO {
         }
     }
 
-    // 更新員工資料
+  
     public void updateEmployee(EmpBean emp) throws SQLException, NamingException {
         String sql = "UPDATE employee SET ename = ?, hiredate = ?, salary = ?, deptno = ?, title = ? WHERE empno = ?";
         try (Connection conn = getConnection();
@@ -57,7 +57,7 @@ public class EmployeeDAO {
         }
     }
 
-    // 根據 ID 查詢員工
+  
     public EmpBean getEmployeeById(String empno) throws SQLException, NamingException {
         String sql = "SELECT * FROM employee WHERE empno = ?";
         try (Connection conn = getConnection();
@@ -78,7 +78,7 @@ public class EmployeeDAO {
         return null;
     }
 
-    // 查詢所有員工
+    
     public List<EmpBean> getAllEmployees() throws SQLException, NamingException {
         List<EmpBean> employees = new ArrayList<>();
         String sql = "SELECT * FROM employee";
