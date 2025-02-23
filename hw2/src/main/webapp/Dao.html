@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>員工管理系統</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #fdf5e6; text-align: center; }
+        form { display: inline-block; text-align: left; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        input { margin-bottom: 10px; padding: 5px; width: 100%; }
+        button { margin-top: 10px; padding: 10px; width: 100%; font-size: 16px; cursor: pointer; }
+        .btn-insert { background-color: #4CAF50; color: white; border: none; }
+        .btn-search { background-color: #2196F3; color: white; border: none; }
+        .btn-update { background-color: #FFC107; color: white; border: none; }
+        .btn-delete { background-color: #F44336; color: white; border: none; }
+    </style>
+</head>
+<body>
+    <h2>員工管理系統</h2>
+    <form id="employeeForm" method="post">
+        
+        <button type="button" class="btn-insert" onclick="submitForm('./HWInsertEmpJNDI')">新增員工</button>
+        <button type="button" class="btn-search" onclick="submitForm('./HWGetEmpJNDI')">查詢員工</button>
+        <button type="button" class="btn-update" onclick="submitForm('./HWUpdateEmpJNDI')">更新員工</button>
+        <button type="button" class="btn-delete" onclick="submitForm('./HWdeleteEmpJNDI')">刪除員工</button>
+    </form>
+
+    <script>
+        function submitForm(action) {
+            let form = document.getElementById("employeeForm");
+            form.action = action;  // 設置對應的 Servlet
+            form.submit();
+        }
+    </script>
+</body>
+</html>
